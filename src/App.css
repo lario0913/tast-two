@@ -1,3 +1,71 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.data-container{
+  height: 100%;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.data-container-heading{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.national-data{
+  margin-bottom: 30px;
+}
+
+.national-data, .state-data{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+    .national-data > article {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+        .national-data > article > h5{
+          width: 40%;
+          /* border: 2px solid black; */
+        }
+        .national-data > article > p{
+          width: 40%;
+          text-align: left;
+          /* border: 2px solid black; */
+        }
+.state-data{
+  width: 70%;
+}
+.state-data .data-heading,
+.state-data .data-collected{
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
+.state-data .data-heading div,
+.state-data .data-collected div {
+  width: 20%;
+}
+
+.state-data .data-heading:nth-child(even),
+.state-data .data-collected:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.state-data .data-heading div:nth-child(1),
+.state-data .data-collected div:nth-child(1) {
+  padding-left: 10px;
+} 
+
 .loading {
   text-transform: capitalize;
   text-align: center;
