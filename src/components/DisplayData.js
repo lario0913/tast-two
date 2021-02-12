@@ -4,10 +4,10 @@ import '../App.css'
 
 function DisplayData(props) {
     const {data} = props
-    if (!data || data.length === 0) return <Loading />
+    console.log(data)
+    if (props.isLoading) return <Loading />
     return (
-      <div className="data-container">
-          
+      <div className="data-container"> 
         <section className="national-data">
           <div className="data-container-heading">
             <h3>COVID-19 STATISTICS IN NIGERIA</h3>
@@ -63,19 +63,15 @@ function DisplayData(props) {
                         <p>{state.state}</p>
                       </div>
                       <div>
-                        {/* <p>Number of confirmed Cases</p> */}
                         <p>{state.confirmedCases}</p>
                       </div>
                       <div>
-                        {/* <h5>Number Admitted</h5> */}
                         <p>{state.casesOnAdmission}</p>
                       </div>
                       <div>
-                        {/* <h5>Number Discharged</h5> */}
                         <p>{state.discharged}</p>
                       </div>
                       <div>
-                        {/* <h5>Number of Death Recorded</h5> */}
                         <p>{state.casesOnAdmission}</p>
                       </div>
                     
