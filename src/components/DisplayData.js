@@ -5,7 +5,7 @@ import '../App.css'
 function DisplayData(props) {
     const {data} = props
     console.log(data)
-    if (props.isLoading) return <Loading />
+    if (!data || data.length === 0 ) return <Loading />
     return (
       <div className="data-container"> 
         <section className="national-data">

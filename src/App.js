@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './App.css'
 import DisplayData from './components/DisplayData';
 import { getCovidDataAction } from './redux/action';
-// import getData from './redux/action';
 import {connect} from 'react-redux'
 
 export class App extends Component {
@@ -10,13 +9,14 @@ export class App extends Component {
     super(props)
   
     this.state = {
-       isLoading: true
+       isLoading: false
     }
   }
 
   componentDidMount(){
     try{
       this.props.getCovidDataAction()
+      this.setState({isLoading: true})
     }catch(error){
       this.setState({isLoading: false})
     }finally{
