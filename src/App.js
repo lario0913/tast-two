@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import DisplayData from './components/DisplayData';
-import { getCovidDataAction } from './redux/action';
+import { getCovidDataAction } from './redux/actions/action';
 import {connect} from 'react-redux'
 
 export class App extends Component {
@@ -9,18 +9,21 @@ export class App extends Component {
     super(props)
   
     this.state = {
-       isLoading: false
+       isLoading: true
     }
   }
 
   componentDidMount(){
     try{
       this.props.getCovidDataAction()
-      this.setState({isLoading: true})
-    }catch(error){
-      this.setState({isLoading: false})
+    }catch(err){
+      this.setState({
+        isLoading: false
+      })
     }finally{
-      this.setState({isLoading: false})
+      this.setState({
+        isLoading: false,
+      })
     }
 
   }
@@ -28,7 +31,8 @@ export class App extends Component {
   render() {
     return(
       <>
-        <DisplayData data={this.props.data.covidData} isLoading={this.state.isLoading} />
+        <DisplayData data={this.props.data.covidData} isLoading={this.state.isLoading}
+        error={this.state.error} />
       </>
     )
   }

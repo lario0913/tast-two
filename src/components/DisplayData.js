@@ -3,9 +3,10 @@ import Loading from './Loading'
 import '../App.css'
 
 function DisplayData(props) {
-    const {data} = props
-    console.log(data)
-    if (!data || data.length === 0 ) return <Loading />
+    const {data, isLoading} = props
+    
+    if(data.length === 0 || isLoading) return <Loading />
+
     return (
       <div className="data-container"> 
         <section className="national-data">
